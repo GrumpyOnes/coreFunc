@@ -1,6 +1,29 @@
 /**
  * compose函数 将多个use中间件合成一个
 */
+
+// const add = (x, y) => x + y
+// const square = z => z * z
+
+
+// // const compose = (fn1, fn2) => (...args) => fn2(fn1(...args))
+/**
+ * 一种简单的compose 实现
+*/
+// const compose = (...[first,...other]) => (...args) => {
+//     let ret = first(...args)
+//     other.forEach(fn => {
+//         ret = fn(ret)
+//     })
+//     return ret
+// }
+
+
+// const fn = compose(add, square)
+
+// // const fn = (x, y) => square(add(x, y))
+// console.log(fn(1, 2))
+
 function compose(middlewares){
     return function(){
         return dispatch(0)
