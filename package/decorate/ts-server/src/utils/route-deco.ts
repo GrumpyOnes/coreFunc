@@ -6,10 +6,17 @@ import * as glob from 'glob'
 const router = new KoaRouter()
 //引用透明 methode工厂
 const createMethod =   router => (method:'get'|'post'|'delete'|'put')=>
- (path:string)=>{
+ (path:string,options?:{
+     middlewares:any[]
+ })=>{
     return (target,property)=>{
+        const middlewares = []
+        if(options?.middlewares){
+            middlewares.push(...options.middlewares)
+        }
+        middlewares.push(target[property])
         //注册路由
-        router[method](path,target[property])
+        router[method](path,...middlewares)
     }
 }
 
