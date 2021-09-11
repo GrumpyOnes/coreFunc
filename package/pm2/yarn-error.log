@@ -1,0 +1,37 @@
+Arguments: 
+  /usr/local/bin/node /Users/kurt/.yarn/bin/yarn.js add request
+
+PATH: 
+  /Users/kurt/.yarn/bin:/Users/kurt/.config/yarn/global/node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/kurt/.yarn/bin:/Users/kurt/.config/yarn/global/node_modules/.bin:/usr/local/mysql/bin:/Users/kurt/.npm-global/bin:/Users/kurt/.rvm/bin:/usr/local/mysql/bin:/Users/kurt/.npm-global/bin:/Users/kurt/.rvm/bin:/usr/local/mysql/bin:/Users/kurt/.rvm/bin:/usr/local/mysql/bin:/Users/kurt/.npm-global/bin:/Users/kurt/.rvm/bin
+
+Yarn version: 
+  1.22.5
+
+Node version: 
+  14.15.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: getaddrinfo ENOTFOUND registry.npm.release.ctripcorp.com
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:67:26)
+
+npm manifest: 
+  {
+    "name": "pm2",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
