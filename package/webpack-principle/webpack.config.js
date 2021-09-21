@@ -20,7 +20,7 @@ module.exports = {
            chunks:["index"]
         }),
         new minicssplugin({
-            filename:'index.css'
+            filename:'[name].css'
         }),
         new htmlwebpackplugin({
             template:'./public/login.html',
@@ -29,10 +29,29 @@ module.exports = {
         }),
         
     ],
+    resolveLoader:{
+        modules:['./node_modules','./myloader']
+    },
     module:{
         rules:[{
             test:/\.css$/,
-            use:[minicssplugin.loader,'css-loader']
+            use:['kkb-style-loader','kkb-css-loader','postcss-loader']
+        },{
+            test:/\.less$/,
+            use:[minicssplugin.loader,'css-loader','postcss-loader','kkb-less-loader']
+        },{
+            test:/\.js$/,
+            use:[{
+                loader:'kkb-loader-async',
+                options:{
+                    name:'hihihihi'
+                }
+            },{
+                loader:resolve(__dirname,'./myloader/kkb-loader.js'),
+                options:{
+                    name:'hihihihi'
+                }
+            }]
         }]
     }
 }

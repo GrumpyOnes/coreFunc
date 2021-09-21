@@ -7,3 +7,9 @@ npm install webpack@4.43.0 webpack-cli@3.3.12 -D
 一个bundle对应一个chunks 一个chunks 智商包含一个chunk（module）
 
 
+---------
+
+
+postcss-loader -> postcss ->postcss.config.js ->browserslistrc
+
+

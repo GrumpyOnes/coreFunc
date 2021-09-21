@@ -1,2 +1,2 @@
 import css from './index.css'
-console.log(12345)
+console.log('this is index.js')
