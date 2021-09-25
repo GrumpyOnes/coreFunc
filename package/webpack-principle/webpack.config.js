@@ -2,6 +2,7 @@ const {resolve} = require('path')
 const htmlwebpackplugin = require('html-webpack-plugin')
 const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 const minicssplugin = require('mini-css-extract-plugin')
+const MyTxtPlugins = require("./myplugins/txt-webpack-plugin")
 module.exports = {
     //index:modules=[index.js,a.js]=[chunk,cnunk]=chunks
     entry:{index:'./src/index.js',login:'./src/login.js'},
@@ -19,6 +20,7 @@ module.exports = {
            filename:'index.html',
            chunks:["index"]
         }),
+        new MyTxtPlugins({}),
         new minicssplugin({
             filename:'css/[name].css'
         }),
@@ -44,6 +46,20 @@ module.exports = {
         },{
             test:/\.js$/,
             use:[{
+                loader:"babel-loader",
+                //配置可以移到。babelrc
+                // options:{
+                //     //presets:["@babel/preset-env"]
+                //     presets:[["@babel/preset-env",{
+                //         targets:{
+                //             //设置目标浏览器集合
+                //             chrome:"67"
+                //         },
+                //         corejs:2,
+                //         useBuiltIns:'entry'//配置按需加载
+                //     }]]
+                // }
+            },{
                 loader:'kkb-loader-async',
                 options:{
                     name:'hihihihi'
