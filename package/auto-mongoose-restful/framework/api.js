@@ -1,6 +1,7 @@
+const {getSearchParams} = require('./util')
 module.exports = {
     async init(ctx, next) {
-        console.log(ctx.params)
+        
         const model = ctx.app.$model[ctx.params.list]
         if (model) {
             ctx.list = model
@@ -11,15 +12,16 @@ module.exports = {
     },
 
     async list(ctx) {
-        ctx.body = await ctx.list.find({})
-
+        const searches = getSearchParams(ctx.search||'')
+        ctx.body = await ctx.list.find({...searches})
     },
     async get(ctx) {
+        
+        //拿到url后拆分 出search信息 
         ctx.body = await ctx.list.findOne({ _id: ctx.params.id })
 
     },
     async create(ctx) {
-        console.log('cttttx',ctx)
         const res = await ctx.list.create(ctx.request.body)
         ctx.body = res
     },
