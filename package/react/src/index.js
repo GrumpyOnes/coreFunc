@@ -20,8 +20,8 @@ function FunctionComponent(props) {
 
 const jsx = (
   <div className="border">
-    <h1>全栈</h1>
-    <a href="https://www.kaikeba.com/">kkb</a>
+    <h1>百度</h1>
+    <a href="https://www.baidu.com/">baidu</a>
     <FunctionComponent name="FunctionComponent" />
 
     <>
