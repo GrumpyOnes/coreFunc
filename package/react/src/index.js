@@ -1,16 +1,21 @@
- //import React, {Component} from "react";
+ //import React, {Component,useState,useReducer} from "react";
  //import ReactDOM from "react-dom";
 import ReactDOM from "./kreact/react-dom";
+import {useReducer} from './kreact/react'
 // import Component from "./kreact/Component";
 import "./index.css";
 
+//链表 数组 fiber.memorized(hook0)
 function FunctionComponent(props) {
+  //const [count,setCount] = useState(0)
+  const [count2,setCount2] = useReducer((x)=>x+1,0)
   return (
     <div className="border">
-      <p>{props.name}</p>
+      <p>{count2}</p>
       <button
         onClick={() => {
-          console.log("omg"); //sy-log
+          
+          setCount2(count2+1)
         }}>
         click
       </button>
@@ -24,10 +29,6 @@ const jsx = (
     <a href="https://www.baidu.com/">baidu</a>
     <FunctionComponent name="FunctionComponent" />
 
-    <>
-      <h1>omg</h1>
-      <h2>omg</h2>
-    </>
   </div>
 );
 

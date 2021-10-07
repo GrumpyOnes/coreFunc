@@ -23,6 +23,8 @@ export function createFiber(vnode, returnFiber) {
     sibling: null,
     alternate: null,
     flags: Placement,
+    //指向老fiber
+    alternate:null
   };
 
   return newFiber;
